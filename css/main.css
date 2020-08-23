@@ -121,6 +121,7 @@ nav {
 	font-weight: 700; 
 	text-transform: uppercase;
 	text-align: center;
+
 }
 
 .intro__subtitle {
@@ -229,10 +230,13 @@ nav {
 }
 
 .works__photo {
+	min-width: 100%;
 	position: absolute; /*Чтоб картинка позиционировалась абсолютно относительно Work__items при такой записи она находиться внутри work__items и позиционируется абсолютно относительно этого блока*/
 	top: 50%;
 	left: 50%; /* прижимаем вверх и лево, а после выравниваем по оси Х и У*/
 	z-index: 1;
+
+
 
 	transform: translate3d(-50%, -50%, 0); /* так как картинка уехала вниз и право(после 50%) выравниваем с помошью этой команды*/
 
@@ -393,7 +397,7 @@ nav {
 
 .reviews__item {
 	display: flex;
-	fles-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .reviews__photo {
@@ -533,7 +537,7 @@ nav {
 }
 
 .burger {
-	display: none;
+	display: none; /*скрыли чтоб использовать в мобильной версии*/
 	padding: 9px 2px;
 	border: 0;
 	background: none;
@@ -580,9 +584,34 @@ nav {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Media
 ==============*/
 
+
+@media (max-width: 1300px) {
+
+	/* Works*/
+
+.works__item{
+	width: 50%;
+}
+}
 
 @media (max-width: 991px) {
 
@@ -606,21 +635,143 @@ nav {
 	font-size: 40px;
 }
 
+	/*Features*/ 
+
+.features__item {
+	width: 50%;
+}
+
+	/*Team*/ 
+.team__item {
+	width: 50%;
+	text-align: center;
+}
+
+.team__photo{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+	/*Social*/ 
+
+.social {
+	justify-content: center;
+}
+
+	/*Reviews*/
+
+.reviews__photo{
+	width: 100%;
+	margin: 15px 0 40px;
+	overflow: hidden;
+}
+
+.reviews__content{
+	width: 100%;
+	padding-left: 0;
+	padding-bottom: 40px;
+}
+
+
 }
 
 @media (max-width: 767px) {
 
-	.intro {
+	/*Intro*/
+
+.intro {
 		height: auto;
 		padding-top: 130px;
 		padding-bottom: 30px;
 	}
 
-	.intro__title {
+.intro__title {
 	font-size: 30px;
 }
-	.intro__subtitle{
+.intro__subtitle{
 		font-size: 16px;
 		margin-bottom: 30px;
 	}
+
+	/*Features*/ 
+
+.features{
+	margin: 40px 0;
+}
+
+.features__item {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+	/* Works*/
+
+.works__item{
+	width: 100%;
+	height: 300px;
+}
+
+	/*Team*/ 
+.team{
+	margin: 60px 0 30px;
+}
+.team__item {
+	width: 100%;
+
+}
+
+	/*Reviews*/
+
+.reviews__text {
+	font-size: 25px;
+}
+
+
+	/*Btn*/
+
+.btn--long{
+	max-width: 260px;
+}
+
+	/*Download*/
+
+.download{
+	margin: 50px 0;
+}
+
+.download__title {
+	font-size: 24px;
+}
+
+	/*Footer*/
+
+.footer__inner{
+	padding: 30px 0;
+}
+
+.footer__block {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin-bottom: 30px;
+}
+
+.footer__block:last-child {
+	margin-bottom: 0;
+}
+
+
+}
+
+
+@media (max-width: 414px) {
+
+		/*Reviews*/
+
+
+.reviews__image {
+	right: -100px;
+}
+
 }
